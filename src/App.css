@@ -4,5 +4,6 @@
   justify-content: center;
 
   /* shape */
+  flex-grow: 1;
   padding: 2em 1em;
 }
