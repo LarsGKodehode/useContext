@@ -1,2 +1,8 @@
 #root {
+  /* placement */
+  display: flex;
+  justify-content: center;
+
+  /* shape */
+  padding: 2em 1em;
 }
