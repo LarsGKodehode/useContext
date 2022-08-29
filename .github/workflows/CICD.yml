@@ -18,7 +18,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: 'yarn' # This here should probably be somthing else see https://github.com/marketplace/actions/yarn-install-cache
 
       - run: npm install --location=global yarn
 
