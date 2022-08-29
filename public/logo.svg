@@ -1,0 +1,50 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+
+  aria-hidden="true"
+  role="img"
+
+  width="100"
+  height="100"
+>
+
+<circle
+  cx="50"
+  cy="0"
+  r="50"
+
+  fill="purple"
+/>
+
+<circle
+  cx="50"
+  cy="100"
+  r="50"
+
+  fill="orange"
+/>
+
+<circle
+  cx="75"
+  cy="20"
+  r="15"
+
+  fill="gray"
+/>
+<circle
+  cx="50"
+  cy="50"
+  r="15"
+
+  fill="gray"
+/>
+<circle
+  cx="25"
+  cy="80"
+  r="15"
+
+  fill="gray"
+/>
+
+</svg>
