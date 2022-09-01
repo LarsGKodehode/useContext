@@ -8,7 +8,9 @@ import { CounterDisplayProps } from '../../@types/types';
 // Context
 import { CountContext } from '../../Context/counterContext';
 
-
+/**
+ * Display the global count
+ */
 function CounterDisplay(props: CounterDisplayProps): JSX.Element {
   // Get state
   const { count } = useContext(CountContext);
