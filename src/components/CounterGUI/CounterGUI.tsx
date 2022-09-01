@@ -1,5 +1,5 @@
 // Libraries
-import { useContext } from 'react';
+import { Component, useContext } from 'react';
 
 // Types
 import { BaseSyntheticEvent, CSSProperties } from 'react';
@@ -7,6 +7,7 @@ import { CounterGUIProps } from '../../@types/types';
 
 // Context
 import { CountContext } from '../../Context/counterContext';
+
 
 /**
  * GUI with buttons to increment and decrement context
@@ -27,10 +28,15 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
   };
 
   // Construct props
-  const buttonStyle: CSSProperties = {
+  const centerContent: CSSProperties = {
+    alignContent: 'center',
+  };
+
+  const buttonStyle = {
     backgroundColor: '#00000000',
     border: '0px',
     borderRadius: '50%',
+    ...centerContent,
   };
 
   const layout: CSSProperties = {
@@ -48,6 +54,17 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
     width: '100',
     height: '100',
   };
+
+  /**
+   * Colors for custom gradient
+   */
+  const svgCustomColors: CSSProperties = {
+    "--gradient-vertical-top": '#8e876f',
+    "--gradient-vertical-bottom": '#0b060e',
+    "--gradient-radial-center": '#99999900',
+    "--gradient-radial-edge": '#0b060e55',
+  };
+
   const incrementProps = {
     ...svgProps,
   };
@@ -56,18 +73,36 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
     ...svgProps,
   };
 
+  // These SVG implementation should be extracted into their own components rather then lingering here
+
   /**
    * SVG for incremting something
    */
   const SVGIncrement = (): JSX.Element => {
     return(
-      <svg {...incrementProps}>
+      <svg {...incrementProps} style={svgCustomColors}>
+        <linearGradient id="gradient-vertical" x2="0" y2="1">
+          <stop offset="0%" stopColor="var(--gradient-vertical-top)" />
+          <stop offset="100%" stopColor="var(--gradient-vertical-bottom)" />
+        </linearGradient>
+        <radialGradient id="gradient-radial">
+          <stop offset="50%" stopColor="var(--gradient-radial-center)" />
+          <stop offset="95%" stopColor="var(--gradient-radial-edge)" />
+        </radialGradient>
         <circle
           cx="50"
           cy="50"
           r="50"
   
-          fill="gray"
+          fill="url(#gradient-vertical)"
+        />
+        <circle
+          cx="50"
+          cy="50"
+          r="50"
+  
+          fill="url(#gradient-radial)"
+          fillOpacity=".5"
         />
         <path
          d='
@@ -90,13 +125,29 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
    */
   const SVGDecrement = (): JSX.Element => {
     return(
-      <svg {...decrementProps}>
+      <svg {...decrementProps} style={svgCustomColors}>
+        <linearGradient id="gradient-vertical" x2="0" y2="1">
+          <stop offset="0%" stopColor="var(--gradient-vertical-top)" />
+          <stop offset="100%" stopColor="var(--gradient-vertical-bottom)" />
+        </linearGradient>
+        <radialGradient id="gradient-radial">
+          <stop offset="50%" stopColor="var(--gradient-radial-center)" />
+          <stop offset="95%" stopColor="var(--gradient-radial-edge)" />
+        </radialGradient>
         <circle
           cx="50"
           cy="50"
           r="50"
   
-          fill="gray"
+          fill="url(#gradient-vertical)"
+        />
+        <circle
+          cx="50"
+          cy="50"
+          r="50"
+  
+          fill="url(#gradient-radial)"
+          fillOpacity=".5"
         />
         <path
          d='
@@ -113,6 +164,7 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
       </svg>
     );
   };
+
 
   return(
     <div
