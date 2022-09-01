@@ -19,7 +19,6 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
   function handleIncrement(event: BaseSyntheticEvent): void {
     event.preventDefault();
     setCount(previousValue => previousValue + 1);
-    console.log(event.target.parentNode)
   };
 
   function handleDecrement(event: BaseSyntheticEvent): void {
@@ -28,18 +27,9 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
   };
 
   // Construct props
-  const svgProps = {
-    width: '100',
-    height: '100',
-  };
-  const incrementProps = {
-    ...svgProps,
-    onClick: (event: BaseSyntheticEvent) => handleIncrement(event),
-  };
-  
-  const decrementProps = {
-    ...svgProps,
-    onClick: (event: BaseSyntheticEvent) => handleDecrement(event),
+  const buttonStyle: CSSProperties = {
+    backgroundColor: '#00000000',
+    border: '0px'
   };
 
   const layout: CSSProperties = {
@@ -53,8 +43,20 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
     ...layout,
   };
 
+  const svgProps = {
+    width: '100',
+    height: '100',
+  };
+  const incrementProps = {
+    ...svgProps,
+  };
+  
+  const decrementProps = {
+    ...svgProps,
+  };
+
   /**
-   * Button to increment global state
+   * SVG for incremting something
    */
   const SVGIncrement = (): JSX.Element => {
     return(
@@ -83,7 +85,7 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
   };
   
   /**
-   * Button to decrement global state
+   * SVG for decremting something
    */
   const SVGDecrement = (): JSX.Element => {
     return(
@@ -115,8 +117,12 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
     <div
       style={guiStyle}
     >
-      <SVGIncrement />
-      <SVGDecrement />
+      <button style={buttonStyle} onClick={(event) => handleIncrement(event)}>
+        <SVGIncrement />
+      </button>
+      <button style={buttonStyle} onClick={(event) => handleDecrement(event)}>
+        <SVGDecrement />
+      </button>
     </div>
   );
 };
