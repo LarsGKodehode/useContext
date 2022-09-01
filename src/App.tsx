@@ -26,9 +26,13 @@ const navbarProps = {
   links: navbarLinks,
 };
 
+
+/**
+ * Main Counter App component
+ */
 function App() {
   // State managment
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   // Setup initial context
   const initialContext: CountContextType = {
