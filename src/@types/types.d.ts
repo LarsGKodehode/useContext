@@ -1,3 +1,5 @@
+import React, { SetStateAction } from "react";
+
 /**
  * Template type for props
  */
@@ -49,6 +51,5 @@ export interface CounterGUIProps {};
  */
 export type CountContextType = {
   count: number,
-  increment?: CallableFunction,
-  decrement?: CallableFunction,
+  setCount: React.Dispatch<SetStateAction<number>>,
 };

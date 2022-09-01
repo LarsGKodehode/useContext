@@ -7,7 +7,6 @@ import CounterDisplay from "../../components/CounterDisplay/CounterDisplay";
 
 function Page1(props: Page1Props): JSX.Element {
   const style: CSSProperties = {
-    backgroundColor: 'green'
   };
 
   return(
