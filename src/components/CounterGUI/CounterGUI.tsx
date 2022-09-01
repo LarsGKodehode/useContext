@@ -29,7 +29,8 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
   // Construct props
   const buttonStyle: CSSProperties = {
     backgroundColor: '#00000000',
-    border: '0px'
+    border: '0px',
+    borderRadius: '50%',
   };
 
   const layout: CSSProperties = {
