@@ -6,7 +6,7 @@ import CounterDisplay from "../../components/CounterDisplay/CounterDisplay";
 
 
 /**
- * Page 3 to display
+ * Third test page here
  */
 function Page3(props: Page3Props): JSX.Element {
   return(
