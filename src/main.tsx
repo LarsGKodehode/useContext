@@ -12,6 +12,8 @@ import './index.css';
 
 // Components
 import App from './App';
+
+// Routes
 import Page1 from './routes/Page1/Page1';
 import Page2 from './routes/Page2/Page2';
 import Page3 from './routes/Page3/Page3';
@@ -28,7 +30,6 @@ root.render(
             <Route path='Page1' element={<Page1 />} />
             <Route path='Page2' element={<Page2 />} />
             <Route path='Page3' element={<Page3 />} />
-
 
           </Route>
 

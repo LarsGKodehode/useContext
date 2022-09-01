@@ -6,7 +6,7 @@ import CounterDisplay from "../../components/CounterDisplay/CounterDisplay";
 
 
 /**
- * Page 2 to display
+ * Second page for displaying the counter here
  */
 function Page2(props: Page2Props): JSX.Element {
   return(
