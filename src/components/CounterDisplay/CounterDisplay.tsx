@@ -17,9 +17,14 @@ function CounterDisplay(props: CounterDisplayProps): JSX.Element {
 
   // Construct props
   const style: CSSProperties = {
-    border: '1px solid yellow',
-    borderRadius: '10px',
+    backgroundColor: 'orange',
+    padding: '1em',
+    borderRadius: '50%',
     textAlign: 'center',
+    boxShadow: `
+      inset 4px 4px 25px 10px yellow,
+      4px 4px 16px 4px black
+    `,
   };
 
 
