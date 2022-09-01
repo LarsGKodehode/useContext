@@ -1,18 +1,28 @@
 // Libraries
-import { useContext } from "react";
+import { CSSProperties, useContext } from "react";
 
 // Types
 import { CounterDisplayProps } from "../../@types/types";
+
+// Context
 import { CountContext } from "../../Context/counterContext";
 
 
 function CounterDisplay(props: CounterDisplayProps): JSX.Element {
+  // Get state
   const { count } = useContext(CountContext);
 
+  // Construct props
+  const style: CSSProperties = {
+    border: '1px solid yellow',
+    borderRadius: '10px',
+    textAlign: 'center',
+  };
+
+
   return(
-    <div>
-      <h1>{`CounterDisplay`.toUpperCase()}</h1>
-      <p>{count}</p>
+    <div style={style}>
+      <h1>{count}</h1>
     </div>
   );
 };

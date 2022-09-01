@@ -1,5 +1,5 @@
 // Types
-import { CSSProperties, useContext } from "react";
+import { BaseSyntheticEvent, CSSProperties, useContext } from "react";
 import { CounterGUIProps } from "../../@types/types";
 import { CountContext } from "../../Context/counterContext";
 
@@ -16,23 +16,25 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
   const {count, setCount} = useContext(CountContext);
 
   // Handlers
-  function handleIncrement(): void {
+  function handleIncrement(event: BaseSyntheticEvent): void {
+    event.preventDefault();
     setCount(previousValue => previousValue + 1);
   };
 
-  function handleDecrement(): void {
+  function handleDecrement(event: BaseSyntheticEvent): void {
+    event.preventDefault();
     setCount(previousValue => previousValue - 1);
   };
 
   // Construct props
   const incrementProps = {
     ...svgProps,
-    onClick: handleIncrement,
+    onClick: (event: BaseSyntheticEvent) => handleIncrement(event),
   };
   
   const decrementProps = {
     ...svgProps,
-    onClick: handleDecrement,
+    onClick: (event: BaseSyntheticEvent) => handleDecrement(event),
   };
 
   const guiStyle: CSSProperties = {
