@@ -73,7 +73,7 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
     ...svgProps,
   };
 
-  // These SVG implementation should be extracted into their own components rather then lingering here
+  // These SVG implementation should be extracted into their own components rather then have them inside here
 
   /**
    * SVG for incremting something
