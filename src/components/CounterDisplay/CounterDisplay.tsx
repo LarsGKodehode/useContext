@@ -1,11 +1,12 @@
 // Libraries
-import { CSSProperties, useContext } from "react";
+import { useContext } from 'react';
 
 // Types
-import { CounterDisplayProps } from "../../@types/types";
+import { CSSProperties } from 'react';
+import { CounterDisplayProps } from '../../@types/types';
 
 // Context
-import { CountContext } from "../../Context/counterContext";
+import { CountContext } from '../../Context/counterContext';
 
 
 function CounterDisplay(props: CounterDisplayProps): JSX.Element {
