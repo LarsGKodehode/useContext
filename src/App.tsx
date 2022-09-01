@@ -1,5 +1,6 @@
 // Libraries
 import { Outlet } from 'react-router-dom';
+import { useState } from 'react';
 
 // CSS
 import './App.css';
@@ -12,9 +13,10 @@ import { CountContext } from './Context/counterContext';
 
 // Components
 import Navbar from './components/Navbar/Navbar';
-import { useState } from 'react';
 
-// Unchanging between build
+// Unchanging between build, uncertain about placing them here or inside the function
+// I think that by placing them outside they only get parsed once,
+// rather than on each component rerender
 const navbarLinks = [
   {to: 'Page1', title: 'Page1'},
   {to: 'Page2', title: 'Page2'},
@@ -24,10 +26,15 @@ const navbarProps = {
   links: navbarLinks,
 };
 
+
+/**
+ * Main Counter App component
+ */
 function App() {
   // State managment
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
+  // Setup initial context
   const initialContext: CountContextType = {
     count,
     setCount,
@@ -43,4 +50,4 @@ function App() {
   );
 };
 
-export default App
+export default App;

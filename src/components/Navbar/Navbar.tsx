@@ -1,34 +1,47 @@
 // Libraries
-import React, { CSSProperties } from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Types
-import { NavbarProps } from "../../@types/types";
+import { CSSProperties } from 'react';
+import { NavbarProps } from '../../@types/types';
 
 // Components
-import CounterGUI from "../CounterGUI/CounterGUI";
+import CounterGUI from '../CounterGUI/CounterGUI';
 
+
+/**
+ * Navbar for displaying navigation links
+ */
 function Navbar(props: NavbarProps): JSX.Element {
+  // Destructure wanted variables
   const { links } = props;
   
-    const style: CSSProperties = {
-      margin: "1em",
-    };
+  // Construct link props
+  const linkStyle: CSSProperties = {
+    margin: "1em",
+  };
 
+  // Create all links
   const StyledLinks = links.map((entry) => {
     return(
       <Link
         to={entry.to}
-        style={style}
+        style={linkStyle}
       >
         {entry.title}
       </Link>
     );
   });
 
+  // Set styling
+  const listStyle: CSSProperties = {
+    padding: '0px',
+  };
+
   return(
     <nav>
-      <ul>
+      <ul style={listStyle}>
         {React.Children.toArray(StyledLinks)}
       </ul>
       <CounterGUI />
