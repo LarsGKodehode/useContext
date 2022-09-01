@@ -8,7 +8,9 @@ import { CounterGUIProps } from '../../@types/types';
 // Context
 import { CountContext } from '../../Context/counterContext';
 
-
+/**
+ * GUI with buttons to increment and decrement context
+ */
 function CounterGUI(props: CounterGUIProps): JSX.Element {
   // Grab refrence to counterContext
   const {count, setCount} = useContext(CountContext);
@@ -51,7 +53,9 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
     ...layout,
   };
 
-  // Create SVG buttons, should probably be extracted into their own component
+  /**
+   * Button to increment global state
+   */
   const SVGIncrement = (): JSX.Element => {
     return(
       <svg {...incrementProps}>
@@ -78,6 +82,9 @@ function CounterGUI(props: CounterGUIProps): JSX.Element {
     );
   };
   
+  /**
+   * Button to decrement global state
+   */
   const SVGDecrement = (): JSX.Element => {
     return(
       <svg {...decrementProps}>
