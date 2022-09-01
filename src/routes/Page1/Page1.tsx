@@ -5,6 +5,10 @@ import { Page1Props } from "../../@types/types";
 // Components
 import CounterDisplay from "../../components/CounterDisplay/CounterDisplay";
 
+
+/**
+ * Page 1 to display
+ */
 function Page1(props: Page1Props): JSX.Element {
   const style: CSSProperties = {
   };

@@ -4,6 +4,10 @@ import { Page3Props } from "../../@types/types";
 // Components
 import CounterDisplay from "../../components/CounterDisplay/CounterDisplay";
 
+
+/**
+ * Page "3" to display
+ */
 function Page3(props: Page3Props): JSX.Element {
   return(
     <main>
