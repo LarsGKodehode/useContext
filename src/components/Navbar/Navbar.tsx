@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { NavbarProps } from "../../@types/types";
 
 // Components
-import CounterDisplay from "../../components/CounterDisplay/CounterDisplay";
+import CounterGUI from "../CounterGUI/CounterGUI";
 
 function Navbar(props: NavbarProps): JSX.Element {
   const { links } = props;
@@ -31,7 +31,7 @@ function Navbar(props: NavbarProps): JSX.Element {
       <ul>
         {React.Children.toArray(StyledLinks)}
       </ul>
-      <CounterDisplay />
+      <CounterGUI />
     </nav>
   );
 };

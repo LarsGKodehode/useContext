@@ -4,8 +4,15 @@ import { Outlet } from 'react-router-dom';
 // CSS
 import './App.css';
 
+// Types
+import { CountContextType } from './@types/types';
+
+// Context
+import { CountContext } from './Context/counterContext';
+
 // Components
 import Navbar from './components/Navbar/Navbar';
+import { useState } from 'react';
 
 // Unchanging between build
 const navbarLinks = [
@@ -18,11 +25,21 @@ const navbarProps = {
 };
 
 function App() {
+  // State managment
+  const [count, setCount] = useState(0)
+
+  const initialContext: CountContextType = {
+    count,
+    setCount,
+  };
+
   return (
-    <div className="App">
-      <Navbar {...navbarProps} />
-      <Outlet />
-    </div>
+    <CountContext.Provider value={initialContext}>
+      <div className="App">
+        <Navbar {...navbarProps} />
+        <Outlet />
+      </div>
+    </CountContext.Provider>
   );
 };
 
